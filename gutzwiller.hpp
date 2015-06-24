@@ -17,7 +17,7 @@ using namespace std;
 #ifdef AMAZON
 const int L = 25;
 #else
-const int L = 10;
+const int L = 5;
 #endif
 const int nmax = 7;
 const int dim = nmax + 1;

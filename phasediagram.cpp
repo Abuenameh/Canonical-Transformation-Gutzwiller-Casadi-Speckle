@@ -649,7 +649,7 @@ int main(int argc, char** argv) {
             int d = L;
             fftw_complex* arr = fftw_alloc_complex(l * l);
             fftw_plan plan = fftw_plan_dft_2d(l, l, arr, arr, FFTW_FORWARD, FFTW_ESTIMATE);
-            std::uniform_real_distribution<> ph(0, 2 * M_PI);
+            uniform_real_distribution<> ph(0, 2 * M_PI);
             for (int i = 0; i < l * l; i++) {
                 int x = i % l - l / 2;
                 int y = i / l - l / 2;

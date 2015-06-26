@@ -667,7 +667,7 @@ int main(int argc, char** argv) {
             for (int i = 0; i < L; i++) {
                 int k = l * l / 2 + l / 4 + i;
                 complex<double> c(arr[k][0], arr[k][1]);
-                xi[i] = abs(c);
+                xi[i] = (4 / (M_PI * d)) * abs(c);
             }
             fftw_destroy_plan(plan);
             fftw_free(arr);

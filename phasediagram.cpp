@@ -1215,12 +1215,19 @@ int main(int argc, char** argv) {
 
 
         for (int ix = 0; ix < 50; ix++) {
-            double x = 2e10 + ix * (2.6e11 - 2e10) / (50 - 1);
+            double x = xmin + ix * (xmax - xmin) / (50 - 1);
             for (int imu = 0; imu < 50; imu++) {
-                double mu = imu / (50. - 1);
+                double mu = mumin + imu * (mumax - mumin) / (50 - 1);
                 points.push({x, mu});
             }
         }
+//        for (int ix = 0; ix < 50; ix++) {
+//            double x = 2e10 + ix * (2.6e11 - 2e10) / (50 - 1);
+//            for (int imu = 0; imu < 50; imu++) {
+//                double mu = imu / (50. - 1);
+//                points.push({x, mu});
+//            }
+//        }
 
         /*{
                   double x1min = 2.05e10;

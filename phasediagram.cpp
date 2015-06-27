@@ -232,6 +232,7 @@ void phasepoints(Parameter& xi, double theta, queue<Point>& points, vector<Point
         for (int i = 0; i < L; i++) {
             W[i] = xi[i] * point.x;
         }
+        scale = 1 / UW(point.x);
         double U0 = 1 / scale;
         //        for (int i = 0; i < L; i++) {
         //            U[i] = UW(W[i]) / UW(point.x) / scale;

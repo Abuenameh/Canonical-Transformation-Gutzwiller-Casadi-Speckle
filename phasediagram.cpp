@@ -593,11 +593,12 @@ int main(int argc, char** argv) {
     int nmutip = lexical_cast<int>(argv[14]);
 
     double D = lexical_cast<double>(argv[15]);
-    double theta = lexical_cast<double>(argv[16]);
+    double D2 = lexical_cast<double>(argv[16]);
+    double theta = lexical_cast<double>(argv[17]);
 
-    int numthreads = lexical_cast<int>(argv[17]);
+    int numthreads = lexical_cast<int>(argv[18]);
 
-    int resi = lexical_cast<int>(argv[18]);
+    int resi = lexical_cast<int>(argv[19]);
 
     //    bool sample = lexical_cast<bool>(argv[18]);
 
@@ -669,6 +670,7 @@ int main(int argc, char** argv) {
                 int k = l * l / 2 + l / 4 + i;
                 complex<double> c(arr[k][0], arr[k][1]);
                 xi[i] = (4 / (M_PI * d)) * abs(c);
+                xi[i] = D2*(xi[i] - 1) + 1;
             }
             fftw_destroy_plan(plan);
             fftw_free(arr);

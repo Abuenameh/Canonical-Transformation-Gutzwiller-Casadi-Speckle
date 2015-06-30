@@ -364,7 +364,7 @@ void phasepoints(Parameter& xi, double theta, queue<Point>& points, vector<Point
 
             pointRes.fth = xth;
             pointRes.Eth = Eth;
-            pointRes.Eth = GroundStateProblem::energy2(x0, J, U0, dU, point.mu, 0);
+//            pointRes.Eth = GroundStateProblem::energy2(x0, J, U0, dU, point.mu, 0);
 
             //            prob->setTheta(2 * theta);
             //
@@ -1216,10 +1216,10 @@ int main(int argc, char** argv) {
         }
 
 
-        for (int ix = 0; ix < 50; ix++) {
-            double x = xmin + ix * (xmax - xmin) / (50 - 1);
-            for (int imu = 0; imu < 50; imu++) {
-                double mu = mumin + imu * (mumax - mumin) / (50 - 1);
+        for (int ix = 0; ix < nx; ix++) {
+            double x = xmin + ix * (xmax - xmin) / (nx - 1);
+            for (int imu = 0; imu < nmu; imu++) {
+                double mu = mumin + imu * (mumax - mumin) / (nmu - 1);
                 points.push({x, mu});
             }
         }

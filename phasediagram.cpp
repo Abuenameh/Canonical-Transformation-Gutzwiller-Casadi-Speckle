@@ -159,6 +159,7 @@ void phasepoints(Parameter& xi, double theta, queue<Point>& points, vector<Point
     boost::random::mt19937 xrng;
     boost::random::uniform_real_distribution<> xuni(0, 1);
     vector<double> xrand(ndim);
+    xrng.seed(time(NULL));
     for (int i = 0; i < ndim; i++) {
         xrand[i] = xuni(xrng);
     }

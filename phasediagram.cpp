@@ -601,6 +601,17 @@ int main(int argc, char** argv) {
 
     int resi = lexical_cast<int>(argv[18]);
 
+    int x0 = 1;
+    int x1 = nx;
+    int mu0 = 1;
+    int mu1 = nmu;
+    if (argc > 19) {
+        x0 = lexical_cast<int>(argv[19]);
+        x1 = lexical_cast<int>(argv[20]);
+        mu0 = lexical_cast<int>(argv[21]);
+        mu1 = lexical_cast<int>(argv[22]);
+    }
+
     //    bool sample = lexical_cast<bool>(argv[18]);
 
 #ifdef AMAZON
@@ -1217,9 +1228,9 @@ int main(int argc, char** argv) {
         }
 
 
-        for (int ix = 0; ix < nx; ix++) {
+        for (int ix = x0-1; ix < x1; ix++) {
             double x = xmin + ix * (xmax - xmin) / (nx - 1);
-            for (int imu = 0; imu < nmu; imu++) {
+            for (int imu = mu0-1; imu < mu1; imu++) {
                 double mu = mumin + imu * (mumax - mumin) / (nmu - 1);
                 points.push({x, mu});
             }
